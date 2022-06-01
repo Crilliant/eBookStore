@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProj/BookShop-main/app/src/main/res/drawable/user.xml" value="0.2545" />
+        <entry key="..\:/AndroidProj/BookShop-main/app/src/main/res/layout/activity_book_detail.xml" value="0.334375" />
+        <entry key="..\:/AndroidProj/BookShop-main/app/src/main/res/layout/activity_history_detail.xml" value="0.4041666666666667" />
+        <entry key="..\:/AndroidProj/BookShop-main/app/src/main/res/layout/activity_main.xml" value="0.4041666666666667" />
+        <entry key="..\:/AndroidProj/BookShop-main/app/src/main/res/layout/book_row_item.xml" value="0.4041666666666667" />
+        <entry key="..\:/AndroidProj/BookShop-main/app/src/main/res/layout/content_book_detail.xml" value="0.4041666666666667" />
+        <entry key="..\:/AndroidProj/BookShop-main/app/src/main/res/layout/fragment_book_list.xml" value="0.4041666666666667" />
+        <entry key="..\:/AndroidProj/BookShop-main/app/src/main/res/layout/fragment_first.xml" value="0.31614583333333335" />
+        <entry key="..\:/AndroidProj/BookShop-main/app/src/main/res/layout/fragment_second.xml" value="0.4041666666666667" />
         <entry key="..\:/workspace/java/androidClass/assignment/BookShop/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1225" />
         <entry key="..\:/workspace/java/androidClass/assignment/BookShop/app/src/main/res/drawable/bg.xml" value="0.1795" />
         <entry key="..\:/workspace/java/androidClass/assignment/BookShop/app/src/main/res/drawable/line.xml" value="0.1225" />

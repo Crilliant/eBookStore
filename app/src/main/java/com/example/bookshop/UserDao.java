@@ -93,36 +93,36 @@ public class UserDao {
         }
     }
 
-    public void getOrder(List<HistoryBean> list)
-    {
-        SQLiteDatabase db= dbOpenHelper.getReadableDatabase();
-        Cursor cursor=db.query("orders",null,"*",null,
-                null,null,null);
-        if(cursor.getCount()==0)
-        {
-            return;
-        }
-        else //cursor决定行，默认在-1，所以要移动，然后可以根据键值对得到要取的列
-        {
-            while(cursor.moveToNext())
-            {
-                @SuppressLint
-                        ("Range") Cursor book=db.query
-                        ("book",null,"bookID=?",
-                                new String[]{cursor.getString(cursor.getColumnIndex("bookID"))},
-                        null,null,null);
-                book.moveToFirst();
-                HistoryBean historyBean=new HistoryBean(book.getString(book.getColumnIndex("title")),
-                        cursor.getString(cursor.getColumnIndex("orderID")),
-                        cursor.getString(cursor.getColumnIndex("dealTime")),
-                        cursor.getInt(cursor.getColumnIndex("count")),
-                        cursor.getFloat(cursor.getColumnIndex("price"))*
-                                cursor.getInt(cursor.getColumnIndex("count")),
-                        get cursor.getString(cursor.getColumnIndex("cover"))
-                        );
-            }
-            int column=cursor.getColumnIndex("pwd");
-        }
-    }
+//    public void getOrder(List<HistoryBean> list)
+//    {
+//        SQLiteDatabase db= dbOpenHelper.getReadableDatabase();
+//        Cursor cursor=db.query("orders",null,"*",null,
+//                null,null,null);
+//        if(cursor.getCount()==0)
+//        {
+//            return;
+//        }
+//        else //cursor决定行，默认在-1，所以要移动，然后可以根据键值对得到要取的列
+//        {
+//            while(cursor.moveToNext())
+//            {
+//                @SuppressLint
+//                        ("Range") Cursor book=db.query
+//                        ("book",null,"bookID=?",
+//                                new String[]{cursor.getString(cursor.getColumnIndex("bookID"))},
+//                        null,null,null);
+//                book.moveToFirst();
+//                HistoryBean historyBean=new HistoryBean(book.getString(book.getColumnIndex("title")),
+//                        cursor.getString(cursor.getColumnIndex("orderID")),
+//                        cursor.getString(cursor.getColumnIndex("dealTime")),
+//                        cursor.getInt(cursor.getColumnIndex("count")),
+//                        cursor.getFloat(cursor.getColumnIndex("price"))*
+//                                cursor.getInt(cursor.getColumnIndex("count")),
+////                        get cursor.getString(cursor.getColumnIndex("cover"))
+//                        );
+//            }
+//            int column=cursor.getColumnIndex("pwd");
+//        }
+//    }
 
 }
