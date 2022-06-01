@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 图书详情页 Created by cyx-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:padding="20dp">
+                <ImageView
+                    android:id="@+id/detail_cover"
+                    android:layout_width="160dp"
+                    android:layout_height="200dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/brief_history"
+                    android:contentDescription="封面图片"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/detail_title"
+                        android:text="人类简史：从动物到上帝"
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="15dp"/>
+                    <TextView
+                        android:id="@+id/detail_author"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="尤瓦尔·赫拉利"
+                        android:textColor="@color/sign_blue"
+                        android:textSize="15sp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="分类："
+                            android:textColor="@color/letter_gray"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="5dp"/>
+                        <TextView
+                            android:id="@+id/detail_class"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="哲学"
+                            android:textColor="@color/letter_gray"
+                            android:layout_marginTop="20dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="书号："
+                            android:textColor="@color/letter_gray"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="5dp"/>
+                        <TextView
+                            android:id="@+id/detail_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="302111"
+                            android:textColor="@color/letter_gray"
+                            android:layout_marginTop="20dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@color/light_gray"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="图书详情"
+                android:textSize="30sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/detail_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="《人类简史：从动物到上拉利在认知w只能有一个。也就是说如果你要使用很复杂的视图结构，就如上问中说的那条新闻，你必须把这些视图放在一个标准布局w只能有一个。也就是说如果你要使用很复杂的视图结构，就如上问中说的那条新闻，你必须把这些视图放在一个标准布局w只能有一个。也就是说如果你要使用很复杂的视图结构，就如上问中说的那条新闻，你必须把这些视图放在一个标准布局w只能有一个。也就是说如果你要使用很复杂的视图结构，就如上问中说的那条新闻，你必须把这些视图放在一个标准布局w只能有一个。也就是说如果你要使用很复杂的视图结构，就如上问中说的那条新闻，你必须把这些视图放在一个标准布局革命章节中”之后，智人拥有了创造及相信虚构事物和故事的能力，这些虚构事物和故事包括了神、国家、民族、企业、钱、人权等。赫拉利在书中声称，人类所有大事”的认知能力而产生。同时，赫拉利将金钱视为一种相互信任的系统，并将政治和经济系统视为或多或少与宗教类似的系统。"
+                android:textColor="@color/letter_gray"
+                android:textSize="20sp"
+                />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!--    固定底部的加入购物车 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:paddingTop="5dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/light_gray"
+        android:id="@+id/CartView">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:id="@+id/rmb"
+            android:text="￥ "
+            android:textColor="@color/orange"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/bottom_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/rmb"
+            android:text="82.40"
+            android:textColor="@color/orange"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            />
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/round_btn"
+            android:id="@+id/sub_btn"
+            android:text="-"
+            android:layout_toLeftOf="@id/book_cnt"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="3dp"
+            android:layout_toLeftOf="@id/add_btn"
+            android:textSize="25sp"
+            android:text="0"
+            android:id="@+id/book_cnt"/>
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/round_btn"
+            android:id="@+id/add_btn"
+            android:text="+"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp">
+
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:background="@color/sign_blue"
+                android:text="试读"
+                android:textSize="20sp" />
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/cart_btn"
+                android:text="加入购物车"
+                android:textSize="20sp"
+                android:background="@color/sign_blue"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
