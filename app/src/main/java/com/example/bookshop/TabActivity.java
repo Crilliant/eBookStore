@@ -17,7 +17,7 @@ import java.util.List;
 public class TabActivity extends AppCompatActivity {
 
     private String[] tabs = {"图书列表", "购物车", "历史订单"};
-    private List<HistoryFragment> historyFragmentList = new ArrayList<>();
+    private List<Fragment> historyFragmentList = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,8 +28,11 @@ public class TabActivity extends AppCompatActivity {
         //添加tab
         for (int i = 0; i < tabs.length; i++) {
             tabLayout.addTab(tabLayout.newTab().setText(tabs[i]));
-            historyFragmentList.add(HistoryFragment.newInstance());
         }
+        historyFragmentList.add(BookList.newInstance());
+        historyFragmentList.add(BookList.newInstance());
+        historyFragmentList.add(HistoryFragment.newInstance());
+
 
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
             @NonNull

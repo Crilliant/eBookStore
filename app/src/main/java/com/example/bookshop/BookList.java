@@ -32,8 +32,14 @@ public class BookList extends Fragment implements BookRecyclerViewAdapter.ItemCl
 
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_book_list, container, false);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
         // classNum = 2 的所有数据
         books = queryAllBooks(0);
         books.addAll(queryAllBooks(1));
@@ -41,7 +47,7 @@ public class BookList extends Fragment implements BookRecyclerViewAdapter.ItemCl
         books.addAll(queryAllBooks(3));
 
 
-        RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.BookListView);
+        RecyclerView recyclerView = (RecyclerView)getActivity().findViewById(R.id.BookListView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new BookRecyclerViewAdapter(getContext(), books);
         adapter.setClickListener(this);
@@ -50,11 +56,6 @@ public class BookList extends Fragment implements BookRecyclerViewAdapter.ItemCl
 
 
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_book_list, container, false);
-    }
     // 查询库中所有book，根据5个属性生成列表
     ArrayList<Book>  queryAllBooks (int classNum){
         DbOpenHelper helper = new DbOpenHelper(getContext());

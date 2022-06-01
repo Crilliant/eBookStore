@@ -39,7 +39,7 @@ public class DbOpenHelper extends SQLiteOpenHelper {
     // 创建user table
     String user_sql="CREATE TABLE user(\n" +
             "   account text primary key not null,\n" +
-            "   psw text not null\n" +
+            "   pwd text not null\n" +
             ")";
 
     // 创建order table
