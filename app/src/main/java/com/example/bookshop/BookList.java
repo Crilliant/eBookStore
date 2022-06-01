@@ -40,6 +40,7 @@ public class BookList extends Fragment implements BookRecyclerViewAdapter.ItemCl
     @Override
     public void onStart() {
         super.onStart();
+
         // classNum = 2 的所有数据
         books = queryAllBooks(0);
         books.addAll(queryAllBooks(1));

@@ -121,7 +121,7 @@ public class BookDetail extends AppCompatActivity {
         db.close();
         cursor.close();
         // 设置封面
-        int coverId = getResources().getIdentifier(cover,"drawable","com.example.ebookstore");
+        int coverId = getResources().getIdentifier(cover,"drawable","com.example.bookshop");
         Drawable img = getDrawable(coverId);
         coverView.setImageDrawable(img);
         titleView.setText(title);
