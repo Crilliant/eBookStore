@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements BookRecyclerViewA
         books = queryAllBooks(0);
         books.addAll(queryAllBooks(1));
         books.addAll(queryAllBooks(2));
+        books.addAll(queryAllBooks(3));
 
 
         RecyclerView recyclerView = findViewById(R.id.BookListView);

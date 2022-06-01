@@ -5,10 +5,11 @@
       <map>
         <entry key="..\:/AndroidProj/eBookStore/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.114" />
         <entry key="..\:/AndroidProj/eBookStore/app/src/main/res/drawable/ic_launcher_background.xml" value="0.114" />
-        <entry key="..\:/AndroidProj/eBookStore/app/src/main/res/layout/activity_book_detail.xml" value="0.17916666666666667" />
+        <entry key="..\:/AndroidProj/eBookStore/app/src/main/res/layout/activity_book_detail.xml" value="0.25" />
         <entry key="..\:/AndroidProj/eBookStore/app/src/main/res/layout/activity_main.xml" value="0.17916666666666667" />
         <entry key="..\:/AndroidProj/eBookStore/app/src/main/res/layout/book_item.xml" value="0.16458333333333333" />
         <entry key="..\:/AndroidProj/eBookStore/app/src/main/res/layout/book_row_item.xml" value="0.17916666666666667" />
+        <entry key="..\:/AndroidProj/eBookStore/app/src/main/res/layout/scroll.xml" value="0.1470713980333476" />
       </map>
     </option>
   </component>
