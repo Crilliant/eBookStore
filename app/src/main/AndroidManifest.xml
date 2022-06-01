@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookShop">
         <activity
+            android:name=".HistoryDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".TabActivity"
             android:exported="false" />
         <activity

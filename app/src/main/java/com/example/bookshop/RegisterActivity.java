@@ -45,6 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if(password.getText().toString().equals(configure.getText().toString()))
                 {
                     userDao.insert(account.getText().toString(),password.getText().toString(),"user");
+                    userDao.newHistory(account.getText().toString());
                     Intent intent = new Intent();
                     intent.setClass(RegisterActivity.this,MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

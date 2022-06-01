@@ -23,6 +23,12 @@ public class UserDao {
         db.close();
     }
 
+    public void newHistory(String account)
+    {
+        SQLiteDatabase db=myHelper.getWritableDatabase();
+        db.execSQL("create table "+account+"History (id integer primary key autoincrement, bookName" +
+                " vatchar(20), bookValue float, imageID integer, time varchar(20))");
+    }
 
     public boolean userExist(String name)//判断用户是否存在
     {
