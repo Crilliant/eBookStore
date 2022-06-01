@@ -15,6 +15,7 @@ import java.util.List;
 
 public class HistoryFragment extends Fragment {
 
+    UserDao userDao=new UserDao(getContext());
     public static HistoryFragment newInstance() {
         HistoryFragment fragment = new HistoryFragment();
         return fragment;
@@ -24,7 +25,6 @@ public class HistoryFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.history, container, false);
-
     }
 
     @Override
