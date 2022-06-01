@@ -4,10 +4,12 @@ package com.example.ebookstore;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,22 +44,32 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
     @Override
     public void onBindViewHolder(@NonNull BookViewHolder holder, int position) {
         Book b = bookData.get(position);
-//        holder.coverView.setImageResource(b.getCover());
+        if(b.getPrice()==0){
+            holder.coverView.setVisibility(View.INVISIBLE);
+            holder.authorView.setVisibility(View.INVISIBLE);
+            holder.priceView.setVisibility(View.INVISIBLE);
 
-        Log.w("drawable", "b.getcover : "+b.getCover());
-        Log.w("drawable", "list: "+R.drawable.kite);
+            // 将item高度设置为50dp,修改背景颜色
+            ViewGroup.LayoutParams params =(ViewGroup.LayoutParams) holder.rowLayout.getLayoutParams();
+            params.height=(int) TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP, 50, context.getResources().getDisplayMetrics());
+            holder.rowLayout.setLayoutParams(params);
+            holder.rowLayout.setBackgroundColor(context.getResources().getColor(R.color.light_gray));
+            holder.titleView.setText(b.getTitle());
 
-
+        }else {
+//            holder.coverView.setVisibility(View.VISIBLE);
+//            holder.authorView.setVisibility(View.VISIBLE);
+//            holder.priceView.setVisibility(View.VISIBLE);
         // 根据book的cover（即图片名字）来查询资源
-        int id = context.getResources().getIdentifier(b.getCover(),"drawable","com.example.ebookstore");
-//        int id = context.getResources().getIdentifier("one","drawable","com.example.ebookstore");
-        Drawable img = context.getDrawable(id);
-        holder.coverView.setImageDrawable(img);
+            int id = context.getResources().getIdentifier(b.getCover(),"drawable","com.example.ebookstore");
+            Drawable img = context.getDrawable(id);
+            holder.coverView.setImageDrawable(img);
 
-
-        holder.titleView.setText(b.getTitle());
-        holder.authorView.setText(b.getAuthor());
-        holder.priceView.setText(String.format("%.2f", b.getPrice()));
+            holder.titleView.setText(b.getTitle());
+            holder.authorView.setText(b.getAuthor());
+            holder.priceView.setText(String.format("%.2f", b.getPrice()));
+            }
     }
     // total number of rows
     @Override
@@ -78,6 +90,7 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
     public class BookViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView titleView, authorView, priceView;
         ImageView coverView;
+        LinearLayout rowLayout;
 
         BookViewHolder(View itemView) {
             super(itemView);
@@ -85,6 +98,7 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
             authorView = itemView.findViewById(R.id.BookAuthor);
             priceView = itemView.findViewById(R.id.BookPrice);
             coverView = itemView.findViewById(R.id.BookCover);
+            rowLayout = itemView.findViewById(R.id.ItemRow);
             itemView.setOnClickListener(this);
         }
 
@@ -101,4 +115,8 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
         void onItemClick(View view, int position);
     }
 }
+
+
+
+
 

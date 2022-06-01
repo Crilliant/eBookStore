@@ -10,26 +10,26 @@
     android:layout_width="match_parent"
     android:layout_height="240dp"
     android:padding="20dp">
-<ImageView
-    android:id="@+id/detail_cover"
-    android:layout_width="160dp"
-    android:layout_height="200dp"
-    android:layout_marginRight="10dp"
-    android:src="@drawable/brief_history"
-    android:contentDescription="封面图片"/>
+    <ImageView
+        android:id="@+id/detail_cover"
+        android:layout_width="160dp"
+        android:layout_height="200dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/brief_history"
+        android:contentDescription="封面图片"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-    <TextView
-        android:id="@+id/detail_title"
-        android:text="人类简史：从动物到上帝"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginTop="15dp"/>
+        <TextView
+            android:id="@+id/detail_title"
+            android:text="人类简史：从动物到上帝"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="15dp"/>
         <TextView
             android:id="@+id/detail_author"
             android:layout_width="wrap_content"
@@ -93,6 +93,7 @@
         android:textColor="@color/black"
         />
     <TextView
+        android:id="@+id/detail_info"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="《人类简史：从动物到上帝》以演化生物学的角度介绍了人类的历史。赫拉利认为生物学限定了人类活动的极限，而文化则塑造了在极限以内所发生的事情，历史学科则是对文化变迁的记录。《人类简史：从动物到上帝》将从石器时代至今天智人的演化历史分为了四个阶段：认知革命（约公元前70000年，智人演化产生了想象力，出现能够描述故事的语言）、农业革命（约公元前12000年，农业开始发展，智人开始驯化动植物）、人类的融合统一（人类政治组织逐渐融合统一为一个“全球帝国”）、科学革命（约公元1500年至今，出现了现代科学）。

@@ -17,13 +17,17 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements BookRecyclerViewAdapter.ItemClickListener{
 
     BookRecyclerViewAdapter adapter;
+    ArrayList<Book> books = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // classNum=0的所有数据
-        ArrayList<Book> books = queryAllBooks(2);
+        // classNum = 2 的所有数据
+        books = queryAllBooks(0);
+        books.addAll(queryAllBooks(1));
+        books.addAll(queryAllBooks(2));
+
 
         RecyclerView recyclerView = findViewById(R.id.BookListView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -63,8 +67,11 @@ public class MainActivity extends AppCompatActivity implements BookRecyclerViewA
 
     public void onItemClick(View view, int position) {
         Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent();
-        intent.setClass(MainActivity.this, BookDetail.class);
-//        intent.putExtra("id", )
+        if(books.get(position).getPrice()!=0){
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, BookDetail.class);
+            intent.putExtra("id", Integer.toString(books.get(position).getBookID()));
+            startActivity(intent);
+        }
     }
 }
