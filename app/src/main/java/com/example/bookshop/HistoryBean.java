@@ -5,10 +5,10 @@ public class HistoryBean {
     String shoppingID;//订单编号
     String time;//购买时间
     int quantity;//图书数目
-    int total;//总价格
+    float total;//总价格
     int imageID;//图片
 
-    public HistoryBean(String name, String shoppingID, String time, int quantity,int total, int imageID)
+    public HistoryBean(String name, String shoppingID, String time, int quantity,float total, int imageID)
     {
         this.name=name;
         this.shoppingID=shoppingID;
@@ -54,7 +54,7 @@ public class HistoryBean {
         return quantity;
     }
 
-    public int getTotal(){
+    public float getTotal(){
         return total;
     }
 

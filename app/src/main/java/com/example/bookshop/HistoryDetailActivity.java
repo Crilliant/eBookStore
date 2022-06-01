@@ -17,8 +17,8 @@ public class HistoryDetailActivity extends AppCompatActivity {
         ListView listView= (ListView)findViewById(R.id.listview);
         List<HistoryBean> list=new ArrayList<>();
         init(list);
-        HistoryAdapter historyAdapter=new HistoryAdapter
-                (HistoryDetailActivity.this,R.layout.list,list);
+        HistoryDetailAdapter historyAdapter=new HistoryDetailAdapter
+                (HistoryDetailActivity.this,R.layout.detail,list);
         listView.setAdapter(historyAdapter);
     }
 
