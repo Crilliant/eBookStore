@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp">
+<ImageView
+    android:id="@+id/BookCover"
+    android:layout_width="80dp"
+    android:layout_height="100dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp"
+    android:src="@drawable/brief_history"
+    android:contentDescription="封面图片"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:id="@+id/BookTitle"
+            android:text="人类简史：从动物到上帝"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/BookAuthor"
+            android:text="尤瓦尔·赫拉利"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:textColor="@color/letter_gray"/>
+        <TextView
+            android:id="@+id/BookPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="50.00元"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:textColor="@color/letter_gray"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
