@@ -28,11 +28,16 @@ public class TabActivity extends AppCompatActivity {
         //添加tab
         for (int i = 0; i < tabs.length; i++) {
             tabLayout.addTab(tabLayout.newTab().setText(tabs[i]));
+//<<<<<<< HEAD
         }
         historyFragmentList.add(BookList.newInstance());
         historyFragmentList.add(BookList.newInstance());
         historyFragmentList.add(HistoryFragment.newInstance());
 
+//=======
+//            historyFragmentList.add(HistoryFragment.newInstance());
+//        }
+//>>>>>>> 2f86b689c8cf2178046d38626f4953a8fd944c56
 
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
             @NonNull
