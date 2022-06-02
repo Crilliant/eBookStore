@@ -30,7 +30,7 @@ public class TabActivity extends AppCompatActivity {
             tabLayout.addTab(tabLayout.newTab().setText(tabs[i]));
         }
         historyFragmentList.add(BookList.newInstance());
-        historyFragmentList.add(BookList.newInstance());
+        historyFragmentList.add(CartFragment.newInstance());
         historyFragmentList.add(HistoryFragment.newInstance());
 
 

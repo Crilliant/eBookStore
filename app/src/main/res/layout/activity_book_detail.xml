@@ -163,17 +163,17 @@
             android:textSize="25sp"
             android:text="0"
             android:id="@+id/book_cnt"/>
+
         <Button
+            android:id="@+id/add_btn"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:background="@drawable/round_btn"
-            android:id="@+id/add_btn"
             android:text="+"
-            android:layout_alignParentRight="true"
             android:textColor="@color/white"
-            android:textSize="15sp"
-            />
+            android:textSize="15sp" />
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

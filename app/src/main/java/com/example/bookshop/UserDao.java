@@ -5,7 +5,11 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
+import androidx.core.util.Pair;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDao {
@@ -91,6 +95,70 @@ public class UserDao {
                 return false;
             }
         }
+    }
+
+    public List<Pair<Integer, Integer>> getCart()
+    {
+        //查询全部数据
+        Cursor cursor = dbOpenHelper.getWritableDatabase()
+                .query("cart",
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null);
+        List<Pair<Integer, Integer>> list = new ArrayList<>();
+        if(cursor.getCount() > 0)
+        {
+            //移动到首位
+            cursor.moveToFirst();
+            for (int i = 0; i < cursor.getCount(); i++) {
+
+                int bookId = cursor.getInt(0);
+                int count = cursor.getInt(1);
+
+                Pair<Integer, Integer> pair = Pair.create(bookId, count);
+
+                list.add(pair);
+                //移动到下一位
+                cursor.moveToNext();
+            }
+        }
+
+        cursor.close();
+        dbOpenHelper.getWritableDatabase().close();
+
+        return list;
+    }
+
+    public Book queryBookId (int bookId){
+        SQLiteDatabase db =dbOpenHelper.getReadableDatabase();
+        Book book = null;
+        Cursor cursor = db.query("book", new String[]{"classNum","title","author","cover","price"},
+                "bookID=?", new String[]{Integer.toString(bookId)},
+                null,null,null);
+
+        String title, author, cover;
+        int id;
+        float price;
+        // 查询结果，移动光标
+        while (true){
+            if (!cursor.moveToNext()) break;
+            // 未找到列名就抛异常
+            title = cursor.getString(cursor.getColumnIndexOrThrow("title"));
+            author = cursor.getString(cursor.getColumnIndexOrThrow("author"));
+            id = cursor.getInt(cursor.getColumnIndexOrThrow("classNum"));
+            cover = cursor.getString(cursor.getColumnIndexOrThrow("cover"));
+            price = cursor.getFloat(cursor.getColumnIndexOrThrow("price"));
+            book = new Book(id, title, author, cover, price);
+            Log.i("cover:",cover);
+            break;
+        }
+        db.close();
+        cursor.close();
+        return book;
     }
 
 //    public void getOrder(List<HistoryBean> list)
