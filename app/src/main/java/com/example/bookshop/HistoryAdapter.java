@@ -48,13 +48,18 @@ public class HistoryAdapter extends ArrayAdapter {
         }
         holder.image.setImageResource(myBean.getImageID());
         holder.name.setText(myBean.getName());
-        holder.total.setText(myBean.getTotal()+"");
+        holder.total.setText("总价格："+myBean.getTotal());
         holder.time.setText("订单完成时间"+myBean.getTime());
-        holder.quantity.setText(myBean.getQuantity()+"");
+        holder.quantity.setText("总数："+myBean.getQuantity());
         holder.shoppingID.setText("订单编号"+myBean.getShoppingID());
         holder.linearLayout.setOnClickListener(View->{//检查哪一项被点击了
         Intent intent=new Intent();
         intent.setClass(getContext(),HistoryDetailActivity.class);
+        intent.putExtra("bookImg",myBean.getImageID());
+        intent.putExtra("count",myBean.getQuantity());
+        intent.putExtra("name",myBean.getName());
+        intent.putExtra("time",myBean.getTime());
+        intent.putExtra("shoppingID",myBean.getShoppingID());
         ContextCompat.startActivity(getContext(),intent,null);
         });
         return view;

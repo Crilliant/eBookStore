@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TabActivity extends AppCompatActivity {
+    UserDao userDao=new UserDao(TabActivity.this);
 
     private String[] tabs = {"图书列表", "购物车", "历史订单"};
     private List<Fragment> historyFragmentList = new ArrayList<>();
@@ -31,7 +32,7 @@ public class TabActivity extends AppCompatActivity {
         }
         historyFragmentList.add(BookList.newInstance());
         historyFragmentList.add(CartFragment.newInstance());
-        historyFragmentList.add(HistoryFragment.newInstance());
+        historyFragmentList.add(HistoryFragment.newInstance(userDao));
 
 
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {

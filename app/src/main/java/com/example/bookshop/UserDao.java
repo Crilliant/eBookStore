@@ -14,10 +14,12 @@ import java.util.List;
 
 public class UserDao {
     DbOpenHelper dbOpenHelper;
+    Context context;
 
     public UserDao(Context context)
     {
         dbOpenHelper =new DbOpenHelper(context);
+        this.context=context;
     }
 
     public void insert(String account,String pwd,String table)//插入
@@ -161,36 +163,45 @@ public class UserDao {
         return book;
     }
 
-//    public void getOrder(List<HistoryBean> list)
-//    {
-//        SQLiteDatabase db= dbOpenHelper.getReadableDatabase();
-//        Cursor cursor=db.query("orders",null,"*",null,
-//                null,null,null);
-//        if(cursor.getCount()==0)
-//        {
-//            return;
-//        }
-//        else //cursor决定行，默认在-1，所以要移动，然后可以根据键值对得到要取的列
-//        {
-//            while(cursor.moveToNext())
-//            {
-//                @SuppressLint
-//                        ("Range") Cursor book=db.query
-//                        ("book",null,"bookID=?",
-//                                new String[]{cursor.getString(cursor.getColumnIndex("bookID"))},
-//                        null,null,null);
-//                book.moveToFirst();
-//                HistoryBean historyBean=new HistoryBean(book.getString(book.getColumnIndex("title")),
-//                        cursor.getString(cursor.getColumnIndex("orderID")),
-//                        cursor.getString(cursor.getColumnIndex("dealTime")),
-//                        cursor.getInt(cursor.getColumnIndex("count")),
-//                        cursor.getFloat(cursor.getColumnIndex("price"))*
-//                                cursor.getInt(cursor.getColumnIndex("count")),
-////                        get cursor.getString(cursor.getColumnIndex("cover"))
-//                        );
-//            }
-//            int column=cursor.getColumnIndex("pwd");
-//        }
-//    }
+    public void addOrder(String date,String table, int bookID,int count)
+    {
+        SQLiteDatabase db= dbOpenHelper.getWritableDatabase();
+        ContentValues values=new ContentValues();
+        values.put("dealTime",date);
+        values.put("bookID",bookID);
+        values.put("count",count);
+        db.insert(table,null,values);
+        db.close();
+    }
 
+    public void getOrder(List<HistoryBean> list)
+    {
+        SQLiteDatabase db= dbOpenHelper.getReadableDatabase();
+        Cursor cursor= dbOpenHelper.getReadableDatabase().rawQuery("select * from orders",null);
+        if(cursor.getCount()==0)
+        {
+            return;
+        }
+        else //cursor决定行，默认在-1，所以要移动，然后可以根据键值对得到要取的列
+        {
+            while(cursor.moveToNext())
+            {
+                @SuppressLint
+                        ("Range") Cursor book=db.query
+                        ("book",null,"bookID=?",
+                                new String[]{cursor.getString(cursor.getColumnIndex("bookID"))},
+                                null,null,null);
+                book.moveToFirst();
+                @SuppressLint("Range") HistoryBean historyBean=new HistoryBean(book.getString(book.getColumnIndex("title")),
+                        cursor.getString(cursor.getColumnIndex("orderID")),
+                        cursor.getString(cursor.getColumnIndex("dealTime")),
+                        cursor.getInt(cursor.getColumnIndex("count")),
+                        cursor.getFloat(cursor.getColumnIndex("price"))*
+                                cursor.getInt(cursor.getColumnIndex("count")),
+                        context.getResources().getIdentifier(cursor.getString(cursor.getColumnIndex("cover")),"drawable","com.example.bookshop")
+                );
+                list.add(historyBean);
+            }
+        }
+    }
 }
