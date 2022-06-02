@@ -46,8 +46,6 @@ public class BookList extends Fragment implements BookRecyclerViewAdapter.ItemCl
         books.addAll(queryAllBooks(1));
         books.addAll(queryAllBooks(2));
         books.addAll(queryAllBooks(3));
-
-
         RecyclerView recyclerView = (RecyclerView)getActivity().findViewById(R.id.BookListView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new BookRecyclerViewAdapter(getContext(), books);

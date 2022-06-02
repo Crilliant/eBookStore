@@ -15,9 +15,10 @@ import java.util.List;
 
 public class HistoryFragment extends Fragment {
 
-    UserDao userDao=new UserDao(getContext());
-    public static HistoryFragment newInstance() {
+    public static UserDao user;
+    public static HistoryFragment newInstance(UserDao userDao) {
         HistoryFragment fragment = new HistoryFragment();
+        user=userDao;
         return fragment;
     }
 
@@ -32,6 +33,8 @@ public class HistoryFragment extends Fragment {
         super.onStart();
         ListView listView= (ListView)getView().findViewById(R.id.listview);
         List<HistoryBean> list=new ArrayList<>();
+//        user.addOrder("2002-4-16","orders",1,30);
+//        user.getOrder(list);
         init(list);
         HistoryAdapter historyAdapter=new HistoryAdapter(getActivity(),R.layout.list,list);
         listView.setAdapter(historyAdapter);
@@ -39,10 +42,10 @@ public class HistoryFragment extends Fragment {
 
     private void init(List<HistoryBean> list)
     {
-        HistoryBean bean1=new HistoryBean("玩具","1","2022-5-14"
-        ,1,30,R.drawable.wanju);
-        HistoryBean bean2=new HistoryBean("香水","2","2022-5-23"
-                ,1,30,R.drawable.xiangshui);
+        HistoryBean bean1=new HistoryBean("人类简史：从动物到上帝","1","2022-6-2"
+        ,1, (float) 23.3,R.drawable.love);
+        HistoryBean bean2=new HistoryBean("简·爱","2","2022-6-2"
+                ,2,106,R.drawable.gone);
         list.add(bean1);
         list.add(bean2);
     }
