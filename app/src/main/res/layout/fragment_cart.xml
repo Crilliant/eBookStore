@@ -9,15 +9,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="40dp"
         app:layout_constraintTop_toTopOf="parent">
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:text="购物车"
             android:gravity="center"
-            android:textSize="30dp"
-            android:background="#EB7F2C"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/light_gray"
+            android:background="@color/sign_blue"
             app:layout_constraintTop_toTopOf="parent"/>
     </LinearLayout>
 

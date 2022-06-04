@@ -1,78 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:id="@+id/ll_view"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/image"
-            android:scaleType="fitStart"
-            android:layout_width="100dp"
-            android:layout_height="120dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1">
-
-            <TextView
-                android:id="@+id/shoppingID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="订单编号"
-                android:textColor="#000000"
-                android:textSize="25dp" />
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="书名"
-                android:paddingLeft="30px"
-                android:textColor="#EB7F2C"
-                android:textSize="20dp" />
 <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_view"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:layout_height="120dp">
+    <ImageView
+        android:id="@+id/image"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitStart"
+        android:layout_width="80dp"
+        android:layout_height="100dp" />
 
-    <TextView
-        android:id="@+id/quantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:layout_weight="1"
-        android:text="数量"
-        android:paddingLeft="30px"
-        android:textColor="#EB7F2C"
-        android:textSize="20dp" />
-    <TextView
-        android:id="@+id/total"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_gravity="right"
-        android:text="总价格"
-        android:paddingLeft="30px"
-        android:textColor="#EB7F2C"
-        android:textSize="20dp" />
-</LinearLayout>
+        android:paddingTop="10dp">
 
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="购买时间"
-                android:layout_gravity="right"
-                android:paddingRight="10dp"
-                android:paddingTop="15dp"
-                android:textColor="#3C3F41"
-                android:textSize="10dp" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/shoppingID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="订单编号"
+            android:textColor="@color/letter_gray"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="书名"
+            android:textColor="@color/letter_gray"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="数量"
+            android:textColor="@color/letter_gray"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="right"
+            android:text="总价格"
+            android:textColor="@color/letter_gray"
+            android:textSize="15sp" />
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="购买时间"
+            android:paddingTop="5dp"
+            android:textColor="@color/letter_gray"
+            android:textSize="15sp" />
+    </LinearLayout>
+</LinearLayout>

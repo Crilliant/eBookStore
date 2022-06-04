@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="10dp">
+    android:layout_height="190dp"
+    android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -15,15 +14,18 @@
             android:id="@+id/book_cover_cart"
             android:layout_width="80dp"
             android:layout_height="100dp"
-            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:src="@drawable/brief_history"
-            android:contentDescription="封面图片"/>
+            android:contentDescription="cover"/>
 
         <Button
             android:id="@+id/buy_cart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="25dp"
             android:textSize="18sp"
             android:text="购买" />
 
@@ -36,12 +38,13 @@
 
         <TextView
             android:id="@+id/book_title_cart"
+            android:text="深度学习图解"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="人类简史：从动物到上帝"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            android:layout_height="40dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,21 +55,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:text="单价: "
-                android:textSize="18sp" />
+                android:textColor="@color/letter_gray"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/price_cart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textSize="18sp" />
+                android:textColor="@color/letter_gray"
+                android:textSize="20sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:text="元"
                 android:textSize="18sp" />
 
@@ -81,9 +86,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:text="数量: "
-                android:textSize="18sp"
+                android:textColor="@color/letter_gray"
+                android:textSize="20sp"
                 android:layout_gravity="center"/>
 
             <Button
@@ -130,10 +136,10 @@
                 android:id="@+id/sum_str_cart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:gravity="center"
                 android:text="总价: "
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:layout_gravity="center"/>
 
             <TextView
@@ -147,10 +153,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_gravity="center"
                 android:text="元"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 

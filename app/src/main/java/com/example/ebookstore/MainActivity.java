@@ -1,4 +1,8 @@
-package com.example.bookshop;
+/*
+ * Created by cyx on 2022.5.22
+ *
+ *  */
+package com.example.ebookstore;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -6,7 +10,6 @@ import androidx.core.content.ContextCompat;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -69,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             }
             ///activity图书列表
             saveAccount();
-            Toast.makeText(MainActivity.this,"登陆成功",Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this,"登录成功",Toast.LENGTH_LONG).show();
             Intent intent = new Intent();
             intent.setClass(MainActivity.this, TabActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

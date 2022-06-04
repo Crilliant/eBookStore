@@ -1,9 +1,8 @@
-// 用于设置booklist每个条目的数据填充
+// 用于设置 booklist 每个条目的数据绑定与填充
 // Created by cyx
-package com.example.bookshop;
+package com.example.ebookstore;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,8 +61,7 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
 //            holder.authorView.setVisibility(View.VISIBLE);
 //            holder.priceView.setVisibility(View.VISIBLE);
             // 根据book的cover（即图片名字）来查询资源
-
-            int id = context.getResources().getIdentifier(b.getCover(),"drawable","com.example.bookshop");
+            int id = context.getResources().getIdentifier(b.getCover(),"drawable","com.example.ebookstore");
             Drawable img = context.getDrawable(id);
             holder.coverView.setImageDrawable(img);
 

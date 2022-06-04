@@ -1,6 +1,6 @@
 // book结构体，用于booklist展示
 // Created by cyx
-package com.example.bookshop;
+package com.example.ebookstore;
 
 public class Book {
     private String title, author, detail,cover;

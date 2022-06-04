@@ -1,4 +1,8 @@
-package com.example.bookshop;
+/*
+ * Created by cyx on 2022.5.22
+ *
+ *  */
+package com.example.ebookstore;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -33,8 +37,6 @@ public class HistoryFragment extends Fragment {
         super.onStart();
         ListView listView= (ListView)getView().findViewById(R.id.listview);
         List<HistoryBean> list=new ArrayList<>();
-//        user.addOrder("2002-4-16","orders",1,30);
-//        user.getOrder(list);
         init(list);
         HistoryAdapter historyAdapter=new HistoryAdapter(getActivity(),R.layout.list,list);
         listView.setAdapter(historyAdapter);
@@ -42,12 +44,9 @@ public class HistoryFragment extends Fragment {
 
     private void init(List<HistoryBean> list)
     {
-        HistoryBean bean1=new HistoryBean("人类简史：从动物到上帝","1","2022-6-2"
-        ,1, (float) 23.3,R.drawable.love);
-        HistoryBean bean2=new HistoryBean("简·爱","2","2022-6-2"
-                ,2,106,R.drawable.gone);
+        HistoryBean bean1=new HistoryBean("第三行代码","202001","2020-06-12"
+        ,1, (float) 88,R.drawable.love);
         list.add(bean1);
-        list.add(bean2);
     }
 }
 

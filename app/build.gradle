@@ -7,7 +7,7 @@ android {
     buildToolsVersion "32.0.0"
 
     defaultConfig {
-        applicationId "com.example.bookshop"
+        applicationId "com.example.ebookstore"
         minSdk 21
         targetSdk 32
         versionCode 1

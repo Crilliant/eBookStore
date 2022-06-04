@@ -1,4 +1,8 @@
-package com.example.bookshop;
+/*
+ * Created by cyx on 2022.5.22
+ *
+ *  */
+package com.example.ebookstore;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -177,31 +181,25 @@ public class UserDao {
     public void getOrder(List<HistoryBean> list)
     {
         SQLiteDatabase db= dbOpenHelper.getReadableDatabase();
-        Cursor cursor= dbOpenHelper.getReadableDatabase().rawQuery("select * from orders",null);
-        if(cursor.getCount()==0)
+        Cursor cursor = db.query("orders",null,null,null,null,null,null);
+        while(cursor.moveToNext())
         {
-            return;
+            @SuppressLint
+                    ("Range") Cursor book=db.query
+                    ("book",null,"bookID=?",
+                            new String[]{cursor.getString(cursor.getColumnIndex("bookID"))},
+                            null,null,null);
+            book.moveToFirst();
+            @SuppressLint("Range") HistoryBean historyBean=new HistoryBean(book.getString(book.getColumnIndex("title")),
+                    cursor.getString(cursor.getColumnIndex("orderID")),
+                    cursor.getString(cursor.getColumnIndex("dealTime")),
+                    cursor.getInt(cursor.getColumnIndex("count")),
+                    cursor.getFloat(cursor.getColumnIndex("price"))*
+                            cursor.getInt(cursor.getColumnIndex("count")),
+                    context.getResources().getIdentifier(cursor.getString(cursor.getColumnIndex("cover")),"drawable","com.example.ebookstore")
+            );
+            list.add(historyBean);
         }
-        else //cursor决定行，默认在-1，所以要移动，然后可以根据键值对得到要取的列
-        {
-            while(cursor.moveToNext())
-            {
-                @SuppressLint
-                        ("Range") Cursor book=db.query
-                        ("book",null,"bookID=?",
-                                new String[]{cursor.getString(cursor.getColumnIndex("bookID"))},
-                                null,null,null);
-                book.moveToFirst();
-                @SuppressLint("Range") HistoryBean historyBean=new HistoryBean(book.getString(book.getColumnIndex("title")),
-                        cursor.getString(cursor.getColumnIndex("orderID")),
-                        cursor.getString(cursor.getColumnIndex("dealTime")),
-                        cursor.getInt(cursor.getColumnIndex("count")),
-                        cursor.getFloat(cursor.getColumnIndex("price"))*
-                                cursor.getInt(cursor.getColumnIndex("count")),
-                        context.getResources().getIdentifier(cursor.getString(cursor.getColumnIndex("cover")),"drawable","com.example.bookshop")
-                );
-                list.add(historyBean);
-            }
-        }
+
     }
 }

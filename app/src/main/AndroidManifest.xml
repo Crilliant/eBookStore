@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bookshop">
+    package="com.example.ebookstore">
 
     <application
         android:allowBackup="true"
@@ -8,23 +8,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BookShop">
+        android:theme="@style/Theme.eBookStore">
         <activity
-            android:name=".BookDetail"
+            android:name="com.example.ebookstore.BookDetail"
             android:exported="false"
-            android:label="@string/title_activity_book_detail"
-            android:theme="@style/Theme.BookShop.NoActionBar" />
+            android:theme="@style/Theme.eBookStore.NoActionBar" />
         <activity
-            android:name=".HistoryDetailActivity"
+            android:name="com.example.ebookstore.HistoryDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".TabActivity"
+            android:name="com.example.ebookstore.TabActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name="com.example.ebookstore.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.ebookstore.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -7,7 +7,7 @@
             <shape android:shape="line">
                 <stroke
                     android:width="20dp"
-                    android:color="#E9E9E9" />
+                    android:color="@color/light_gray" />
             </shape>
         </rotate>
     </item>

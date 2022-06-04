@@ -1,6 +1,8 @@
-package com.example.bookshop;
-
-import static androidx.core.content.res.TypedArrayUtils.getString;
+/*
+ * Created by cyx on 2022.5.22
+ *
+ *  */
+package com.example.ebookstore;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -46,12 +48,15 @@ public class CartFragment extends Fragment {
 
     private void init(List<CartBean> list)
     {
-        CartBean bean1=new CartBean("人类简史",1,R.drawable.brief_history,4
-                , 15.00F,0);
-        CartBean bean2=new CartBean("追风筝的人",2,R.drawable.kite,5
-                ,20.00F,0);
+        CartBean bean1=new CartBean("第一行代码",7,R.drawable.tea,4
+                , 14.39f,0);
+        CartBean bean2=new CartBean("第二行代码",8,R.drawable.call,5
+                ,15.3F,0);
+        CartBean bean3=new CartBean("第三行代码",9,R.drawable.love,1
+                ,88,0);
         list.add(bean1);
         list.add(bean2);
+        list.add(bean3);
     }
 
     public void showDialog(){

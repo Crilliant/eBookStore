@@ -1,4 +1,8 @@
-package com.example.bookshop;
+/*
+ * Created by cyx on 2022.5.22
+ *
+ *  */
+package com.example.ebookstore;
 
 public class HistoryBean {
     String name;//书名
@@ -17,17 +21,7 @@ public class HistoryBean {
         this.total=total;
         this.imageID=imageID;
     }
-//    public void setName(String name)
-//    {
-//        this.name=name;
-//    }
-//
-//    public void setTime(String time){ this.time=time; }
-//
-//    public void setImageID(int imageID)
-//    {
-//        this.imageID=imageID;
-//    }
+
 
     public String getName()
     {

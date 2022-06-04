@@ -1,4 +1,8 @@
-package com.example.bookshop;
+/*
+ * Created by cyx on 2022.5.22
+ *
+ *  */
+package com.example.ebookstore;
 
 public class CartBean {
     private String name;//书名

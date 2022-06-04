@@ -1,6 +1,6 @@
 // booklist fragment
 // Created by cyx
-package com.example.bookshop;
+package com.example.ebookstore;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -15,8 +15,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -41,7 +39,7 @@ public class BookList extends Fragment implements BookRecyclerViewAdapter.ItemCl
     public void onStart() {
         super.onStart();
 
-        // classNum = 2 的所有数据
+        // 按照classNum查找数据
         books = queryAllBooks(0);
         books.addAll(queryAllBooks(1));
         books.addAll(queryAllBooks(2));
@@ -84,7 +82,6 @@ public class BookList extends Fragment implements BookRecyclerViewAdapter.ItemCl
     }
 
     public void onItemClick(View view, int position) {
-        Toast.makeText(getContext(), "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
         if(books.get(position).getPrice()!=0){
             Intent intent = new Intent();
             intent.setClass(getContext(), BookDetail.class);
