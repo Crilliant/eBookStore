@@ -58,9 +58,6 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
             holder.titleView.setText(b.getTitle());
 
         }else {
-//            holder.coverView.setVisibility(View.VISIBLE);
-//            holder.authorView.setVisibility(View.VISIBLE);
-//            holder.priceView.setVisibility(View.VISIBLE);
         // 根据book的cover（即图片名字）来查询资源
             int id = context.getResources().getIdentifier(b.getCover(),"drawable","com.example.ebookstore");
             Drawable img = context.getDrawable(id);

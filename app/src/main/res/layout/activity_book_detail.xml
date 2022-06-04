@@ -186,6 +186,7 @@
                 android:layout_marginLeft="10dp"
                 android:background="@color/sign_blue"
                 android:text="试读"
+                android:textColor="@color/white"
                 android:textSize="20sp" />
             <Button
                 android:layout_width="180dp"
@@ -193,6 +194,7 @@
                 android:id="@+id/cart_btn"
                 android:text="加入购物车"
                 android:textSize="20sp"
+                android:textColor="@color/white"
                 android:background="@color/sign_blue"
                 android:layout_marginRight="10dp"
                 android:layout_alignParentRight="true"
